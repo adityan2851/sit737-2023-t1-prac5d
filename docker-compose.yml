@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web1:
+    image: adityan28/week4:latest
+    ports:
+      - "8081:80"
+    restart: on-failure
+    networks:
+      - myNetwork
+  
+  web2:
+    image: adityan28/week4:latest
+    ports:
+      - "8082:80"
+    restart: on-failure
+    networks:
+      - myNetwork
+        
+networks:
+  myNetwork:
+    driver: bridge
